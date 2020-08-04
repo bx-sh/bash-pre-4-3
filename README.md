@@ -16,8 +16,6 @@ _set_bash_pre_4_3() {
   elif [ $bash_major_version -eq 4 ] && [ $bash_minor_version -lt 3 ]
   then
     export BASH_PRE_4_3=true
-  else
-    :
   fi
 }
 
