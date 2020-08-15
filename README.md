@@ -26,12 +26,12 @@ unset -f _set_bash_pre_4_3
 
 ### Why?
 
- - (a) Mac OS X uses a wicked old version of BASH (3.2.57) from ~2006
- - (b) There may arguably be other systems running BASH pre-4.3 (released in 2014)
- 
-BASH 4.3 introduced a significant feature: nameref variables
+- (a) Mac OS X uses a wicked old version of BASH (3.2.57) from ~2006
+- (b) There may arguably be other systems running BASH pre-4.3 (released in 2014)
 
-This allows you to have an indirect reference to another variable by its name:
+BASH 4.3 introduced a significant feature: `nameref variables`
+
+They allow you to have an indirect reference to another variable by its name:
 
 ```sh
 # Create an array
@@ -53,10 +53,10 @@ echo "Length: ${#array[@]}"
 
 Other important features added after BASH 3.2.57 (which Mac OS X uses) include:
 
- - Associative arrays and the -z operator to check if they contain a certain key
+- Associative arrays and the -z operator to check if they contain a certain key
 
 ---
 
-I have lots of code that changes its behavior based on whether `[ -n "$BASH_PRE_4_3" ]` or not.
+I have lots of code that changes its behavior based on whether `[ -z "$BASH_PRE_4_3" ]` or not.
 
 My code uses this as a package dependency, but you can use it however you'd like.
